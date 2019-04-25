@@ -97,7 +97,6 @@ RSpec.describe 'Create Response Request', type: :request do
         next if example.metadata[:background_jobs] == :disable
 
         run_background_jobs
-        sleep 0.1
         force_export_now
       end
     end
@@ -135,6 +134,25 @@ RSpec.describe 'Create Response Request', type: :request do
         url = json_response.dig(:meta, 'BuildResponse', 'pdf_url')
         res = HTTParty.get(url)
         expect(res.code).to be 200
+      end
+
+      it 'returns identical data if called twice with the same uuid', background_jobs: :disable do
+        # Arrange - get the response from the first call and reset the session ready for the second
+        response1 = JSON.parse(response.body).with_indifferent_access
+        reset!
+
+        # Act - Call the endpoint for the second time
+        perform_action
+        response2 = JSON.parse(response.body).with_indifferent_access
+
+        # Arrange - check they are identical
+        expect(response1).to eq response2
+      end
+
+      it 'creates no more records if called a second time with same uuid', background_jobs: :disable do
+
+        # Assert
+        expect { perform_action }.not_to change(Response, :count)
       end
     end
 
@@ -346,8 +364,9 @@ RSpec.describe 'Create Response Request', type: :request do
       include_examples 'email validation using standard template'
     end
 
-    context 'with json for a response with an rtf upload' do
+    context 'with json for a response with an rtf upload in amazon mode' do
       rtf_file_path = Rails.root.join('spec', 'fixtures', 'example.rtf').to_s
+      include_context 'with cloud provider switching', cloud_provider: :amazon
       include_context 'with transactions off for use with other processes'
       include_context 'with fake sidekiq'
       include_context 'with setup for any response',
@@ -368,7 +387,31 @@ RSpec.describe 'Create Response Request', type: :request do
           expect(full_path).to be_a_file_copy_of(rtf_file_path)
         end
       end
-      it 'marks the pdf as having an rtf file attached'
+    end
+
+    context 'with json for a response with an rtf upload in azure mode' do
+      rtf_file_path = Rails.root.join('spec', 'fixtures', 'example.rtf').to_s
+      include_context 'with cloud provider switching', cloud_provider: :azure
+      include_context 'with transactions off for use with other processes'
+      include_context 'with fake sidekiq'
+      include_context 'with setup for any response',
+        json_factory: -> { FactoryBot.build(:json_build_response_commands, :with_rtf, rtf_file_path: rtf_file_path) }
+      include_context 'with background jobs running'
+      include_examples 'any response variation'
+      include_examples 'a response with meta for office 22 bristol'
+      include_examples 'a response exported to primary ATOS'
+      include_examples 'email validation using standard template'
+
+      it 'includes the rtf file in the staging folder' do
+        reference = json_response.dig(:meta, 'BuildResponse', :reference)
+        respondent_name = input_respondent_factory.name
+        output_filename_rtf = "#{reference}_ET3_Attachment_#{respondent_name}.rtf"
+        Dir.mktmpdir do |dir|
+          full_path = File.join(dir, output_filename_rtf)
+          staging_folder.extract(output_filename_rtf, to: full_path)
+          expect(full_path).to be_a_file_copy_of(rtf_file_path)
+        end
+      end
     end
 
     context 'with json for a response with an invalid office code in the case number' do

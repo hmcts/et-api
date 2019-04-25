@@ -7,6 +7,10 @@ module EtApi
         self.password = password
       end
 
+      def empty?
+        filenames.empty?
+      end
+
       def filenames
         resp = HTTParty.get("#{base_url}/list", basic_auth: { username: username, password: password })
         resp.body.lines.map { |line| CGI.unescape(line.strip) }
@@ -45,11 +49,7 @@ module EtApi
       end
 
       def extract_to_tempfile(filename)
-        Dir.mktmpdir do |dir|
-          full_path = File.join(dir, filename)
-          extract(filename, to: full_path)
-          copy_to_temp_file(full_path)
-        end
+        Tempfile.new.tap { |tempfile| extract(filename, to: tempfile.path) }
       end
 
       def et1_txt_file(filename)
@@ -65,31 +65,20 @@ module EtApi
       end
 
       def et3_pdf_file(filename, template: 'et3-v1-en')
-        EtApi::Test::FileObjects::Et3PdfFile.new extract_to_tempfile(filename), template: template
+        EtApi::Test::FileObjects::Et3PdfFile.new extract_to_tempfile(filename), template: template, lookup_root: 'response_pdf_fields'
+      end
+
+      def et1_pdf_file(filename, template: 'et1-v1-en')
+        EtApi::Test::FileObjects::Et1PdfFile.new extract_to_tempfile(filename), template: template, lookup_root: 'claim_pdf_fields'
       end
 
       private
 
       attr_accessor :base_url, :username, :password
 
-      def copy_to_temp_file(file_path)
-        tempfile = Tempfile.new
-        tempfile.binmode
-        File.open(file_path, 'rb') do |f|
-          loop do
-            data = f.read(4096)
-            break if data.nil?
-            tempfile.write data
-          end
-        end
-        tempfile.flush
-        tempfile.rewind
-        tempfile
-      end
-
       def extract_file_from_zip(filename, zip_filename, to:)
         ::Zip::File.open(zip_filename) do |z|
-          z.extract(filename, to)
+          z.extract(filename, to) { true }
         end
       end
     end

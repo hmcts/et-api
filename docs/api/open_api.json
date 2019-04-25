@@ -52,7 +52,7 @@
               "properties": {
                 "uuid": {
                   "type": "string",
-                  "example": "d158344c-50d0-4f5a-a356-77a11a1d6fb9",
+                  "example": "a7708bb7-9712-474f-bfba-1454bb1821e4",
                   "description": "A unique ID produced by the client to refer to this command"
                 },
                 "data": {
@@ -94,12 +94,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "c3ff8b59-b571-441e-b5b7-e8cca6284195"
+                "x-example-value": "b99bf5c4-13b1-48c4-b19c-4a414d7235db"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.070015"
+                "x-example-value": "0.055107"
               },
               "Content-Length": {
                 "description": "",
@@ -113,16 +113,16 @@
                 "meta": {
                   "cloud_provider": "amazon"
                 },
-                "uuid": "d158344c-50d0-4f5a-a356-77a11a1d6fb9",
+                "uuid": "a7708bb7-9712-474f-bfba-1454bb1821e4",
                 "data": {
                   "fields": {
-                    "key": "direct_uploads/4f4af600-5c76-4602-8ef6-110428af1eb5",
+                    "key": "direct_uploads/5902753a-6fad-4e59-9fb4-e677b7d140f6",
                     "success_action_status": "201",
-                    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOS0wMi0xM1QwMDoxNTo1N1oiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJldGFwaWRpcmVjdGJ1Y2tldHRlc3QifSx7ImtleSI6ImRpcmVjdF91cGxvYWRzLzRmNGFmNjAwLTVjNzYtNDYwMi04ZWY2LTExMDQyOGFmMWViNSJ9LHsic3VjY2Vzc19hY3Rpb25fc3RhdHVzIjoiMjAxIn0seyJ4LWFtei1jcmVkZW50aWFsIjoiYWNjZXNzS2V5MS8yMDE5MDIxMi91cy1lYXN0LTEvczMvYXdzNF9yZXF1ZXN0In0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In0seyJ4LWFtei1kYXRlIjoiMjAxOTAyMTJUMjMxNTU3WiJ9XX0=",
-                    "x-amz-credential": "accessKey1/20190212/us-east-1/s3/aws4_request",
+                    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOS0wMy0yOFQxNDo1OTozN1oiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJldGFwaWRpcmVjdGJ1Y2tldHRlc3QifSx7ImtleSI6ImRpcmVjdF91cGxvYWRzLzU5MDI3NTNhLTZmYWQtNGU1OS05ZmI0LWU2NzdiN2QxNDBmNiJ9LHsic3VjY2Vzc19hY3Rpb25fc3RhdHVzIjoiMjAxIn0seyJ4LWFtei1jcmVkZW50aWFsIjoiYWNjZXNzS2V5MS8yMDE5MDMyOC91cy1lYXN0LTEvczMvYXdzNF9yZXF1ZXN0In0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In0seyJ4LWFtei1kYXRlIjoiMjAxOTAzMjhUMTM1OTM3WiJ9XX0=",
+                    "x-amz-credential": "accessKey1/20190328/us-east-1/s3/aws4_request",
                     "x-amz-algorithm": "AWS4-HMAC-SHA256",
-                    "x-amz-date": "20190212T231557Z",
-                    "x-amz-signature": "f02efaf9a26e398cea6b7aaa1c62f196d7e382b8957e4fd870350f601b500b77"
+                    "x-amz-date": "20190328T135937Z",
+                    "x-amz-signature": "405a98e42c48ddd7b204ef3e13d2e00e53071f5d3fdc96c5254872a7225d3992"
                   },
                   "url": "http://localhost:9000/etapidirectbuckettest"
                 }
@@ -161,23 +161,42 @@
               "properties": {
                 "uuid": {
                   "type": "string",
-                  "example": "d40c9b45-ec3f-4b0d-b4c0-eeadbcbae23e",
+                  "example": "1d51af80-de22-42b7-891b-0ad40e045d9f",
                   "description": "A unique ID produced by the client to refer to this command"
                 },
                 "data": {
                   "type": "array",
                   "example": [
                     {
-                      "uuid": "356586af-7e92-4490-9008-1d737ba2cdf9",
+                      "uuid": "bbaf9cf8-a20a-4246-bff5-502e62b377a3",
                       "command": "BuildClaim",
                       "data": {
+                        "employment_details": {
+                          "start_date": "2009-11-18",
+                          "end_date": null,
+                          "notice_period_end_date": null,
+                          "job_title": "agriculturist",
+                          "average_hours_worked_per_week": 38.0,
+                          "gross_pay": 3000,
+                          "gross_pay_period_type": "monthly",
+                          "net_pay": 2000,
+                          "net_pay_period_type": "monthly",
+                          "worked_notice_period_or_paid_in_lieu": null,
+                          "notice_pay_period_type": null,
+                          "notice_pay_period_count": null,
+                          "enrolled_in_pension_scheme": true,
+                          "benefit_details": "Company car, private health care",
+                          "found_new_job": null,
+                          "new_job_start_date": null,
+                          "new_job_gross_pay": null
+                        },
                         "reference": "222000000100",
                         "submission_reference": "J704-ZK5E",
                         "submission_channel": "Web",
                         "case_type": "Single",
                         "jurisdiction": "2",
                         "office_code": "22",
-                        "date_of_receipt": "2019-02-12T23:15:57+0000",
+                        "date_of_receipt": "2019-03-28T13:59:37+0000",
                         "other_known_claimant_names": "",
                         "discrimination_claims": [
 
@@ -193,13 +212,12 @@
                         "other_outcome": "",
                         "send_claim_to_whistleblowing_entity": false,
                         "miscellaneous_information": "",
-                        "employment_details": {
-                        },
-                        "is_unfair_dismissal": false
+                        "is_unfair_dismissal": false,
+                        "pdf_template_reference": "et1-v1-en"
                       }
                     },
                     {
-                      "uuid": "a27cc619-b01c-424c-b3b3-9065879b8eb5",
+                      "uuid": "9981fee8-3894-4904-bc8e-dfe5add28740",
                       "command": "BuildPrimaryRespondent",
                       "data": {
                         "name": "dodgy_co",
@@ -235,7 +253,7 @@
                       }
                     },
                     {
-                      "uuid": "2cae219c-86fe-47b9-b079-d91ef6ca7ef3",
+                      "uuid": "d9b5094a-db95-4d80-8eb4-f5c130918f07",
                       "command": "BuildPrimaryClaimant",
                       "data": {
                         "title": "Mr",
@@ -252,14 +270,14 @@
                         "mobile_number": "01234 098765",
                         "email_address": "test@digital.justice.gov.uk",
                         "fax_number": null,
-                        "contact_preference": "email",
+                        "contact_preference": "Email",
                         "gender": "Male",
                         "date_of_birth": "1982-11-21",
                         "special_needs": null
                       }
                     },
                     {
-                      "uuid": "09cdd286-d817-4747-b642-e5a682c67e72",
+                      "uuid": "cdd235d9-d0dd-4ae2-8d7c-455b83f1d741",
                       "command": "BuildSecondaryClaimants",
                       "data": [
                         {
@@ -277,7 +295,7 @@
                           "mobile_number": "01234 098765",
                           "email_address": "test@digital.justice.gov.uk",
                           "fax_number": null,
-                          "contact_preference": "email",
+                          "contact_preference": "Email",
                           "gender": "Male",
                           "date_of_birth": "1982-11-21",
                           "special_needs": null
@@ -285,7 +303,7 @@
                       ]
                     },
                     {
-                      "uuid": "eb3d1869-aecd-41a3-a642-75b07ece3956",
+                      "uuid": "fafe4b66-51dc-4ab3-bb9b-6e33c202a043",
                       "command": "BuildSecondaryRespondents",
                       "data": [
                         {
@@ -323,7 +341,7 @@
                       ]
                     },
                     {
-                      "uuid": "dbe517f2-5362-4940-85c2-a3e8c14bd74b",
+                      "uuid": "b1227e5b-3a7e-4b31-a261-1fee4c6e795b",
                       "command": "BuildPrimaryRepresentative",
                       "data": {
                         "address_attributes": {
@@ -346,13 +364,13 @@
                       }
                     },
                     {
-                      "uuid": "733b597d-0ecb-4fd9-a7ce-103b32f45872",
+                      "uuid": "4e9f7aaa-69e0-44f4-ac26-9cf3a2fee15d",
                       "command": "BuildPdfFile",
                       "data": {
-                        "data_url": "http://localhost:9000/etapibuckettest/Cr6ZahKUkubCPqRW4QZQWXyB?response-content-disposition=inline%3B%20filename%3D%22et1_first_last.pdf%22%3B%20filename%2A%3DUTF-8%27%27et1_first_last.pdf&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=accessKey1%2F20190212%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190212T231558Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7760295397cbe8577b41c7760030112488df0c99fe50072ee08402f8b8014fa8",
+                        "data_url": "http://localhost:9000/etapibuckettest/cEQjHxpSW34AzGPgC7vDwJMg?response-content-disposition=inline%3B%20filename%3D%22et1_first_last.pdf%22%3B%20filename%2A%3DUTF-8%27%27et1_first_last.pdf&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=accessKey1%2F20190328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190328T135938Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=92d038209c35ea2f16272f53e277c8041439b272c14d5070324ec417e969057e",
+                        "data_from_key": null,
                         "filename": "et1_first_last.pdf",
-                        "checksum": "ee2714b8b731a8c1e95dffaa33f89728",
-                        "data_from_key": null
+                        "checksum": "ee2714b8b731a8c1e95dffaa33f89728"
                       }
                     }
                   ],
@@ -375,7 +393,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Create a claim with a claimant, respondent and representative",
+            "description": "Create a claim with a claimant, respondent and representative with external pdf",
             "schema": {
               "description": "",
               "type": "object",
@@ -396,17 +414,17 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "fa380a97-0fca-4616-9054-a10bb1e5ca2d"
+                "x-example-value": "32c83292-20c5-4c6f-8f5a-6b2c9b0e13e0"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.345644"
+                "x-example-value": "0.316393"
               },
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "282"
+                "x-example-value": "776"
               }
             },
             "examples": {
@@ -414,7 +432,8 @@
                 "status": "accepted",
                 "meta": {
                   "BuildClaim": {
-                    "reference": "222000000100"
+                    "reference": "222000000100",
+                    "pdf_url": "http://localhost:9000/etapibuckettest/NQsjMtbD7L8RTsvVpHxjcuu4?response-content-disposition=attachment%3B%20filename%3D%22et1_atos_export.pdf%22%3B%20filename%2A%3DUTF-8%27%27et1_atos_export.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=accessKey1%2F20190328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190328T135938Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6bdb5767f06e8276ad1b175ca206f8e909ea3b6dbc9b4544d0618a45abc931f1"
                   },
                   "BuildPrimaryRespondent": {
                   },
@@ -429,7 +448,7 @@
                   "BuildPdfFile": {
                   }
                 },
-                "uuid": "d40c9b45-ec3f-4b0d-b4c0-eeadbcbae23e"
+                "uuid": "1d51af80-de22-42b7-891b-0ad40e045d9f"
               }
             }
           }
@@ -465,7 +484,7 @@
               "properties": {
                 "uuid": {
                   "type": "string",
-                  "example": "50b63a22-327c-4bb8-b923-c3c3023f3185",
+                  "example": "40da2c52-2f5f-4bea-ab3b-42183e7dc9ad",
                   "description": "A unique ID produced by the client to refer to this command"
                 },
                 "data": {
@@ -505,7 +524,7 @@
               "ETag": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "W/\"f865645a9b80bed48e92e52e782a0645\""
+                "x-example-value": "W/\"edb64e48bc019955294286106997f8af\""
               },
               "Cache-Control": {
                 "description": "",
@@ -515,12 +534,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "cdd1960f-7fcb-4010-8924-027fe7c3cbfc"
+                "x-example-value": "1bd05960-fb01-4624-b4e1-1afda416c7c4"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.040847"
+                "x-example-value": "0.039252"
               },
               "Content-Length": {
                 "description": "",
@@ -533,9 +552,9 @@
                 "status": "created",
                 "meta": {
                 },
-                "uuid": "50b63a22-327c-4bb8-b923-c3c3023f3185",
+                "uuid": "40da2c52-2f5f-4bea-ab3b-42183e7dc9ad",
                 "data": {
-                  "reference": "222000013900",
+                  "reference": "222000139200",
                   "office": {
                     "code": "22",
                     "name": "London Central",
@@ -578,7 +597,7 @@
               "properties": {
                 "uuid": {
                   "type": "string",
-                  "example": "a3031833-6d14-4cc4-affb-2d7ef65186a3",
+                  "example": "6e2c276e-bfc9-4ab2-b3d5-8a0367391db6",
                   "description": "A unique ID produced by the client to refer to this command"
                 },
                 "data": {
@@ -620,12 +639,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "9f5a6dea-84be-402d-83f1-8a0c314532c2"
+                "x-example-value": "e08664cd-a88f-42ac-a1bb-7ddd87c870a7"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.041038"
+                "x-example-value": "0.026277"
               },
               "Content-Length": {
                 "description": "",
@@ -638,16 +657,16 @@
                 "status": "accepted",
                 "meta": {
                 },
-                "uuid": "a3031833-6d14-4cc4-affb-2d7ef65186a3",
+                "uuid": "6e2c276e-bfc9-4ab2-b3d5-8a0367391db6",
                 "data": {
                   "fields": {
-                    "key": "direct_uploads/3e8fd0ba-70e1-44b7-94ce-52c6f76a738b",
+                    "key": "direct_uploads/10606769-d6eb-4703-9149-7c492220731a",
                     "success_action_status": "201",
-                    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOS0wMi0xM1QwMDoxNTo1OFoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJldGFwaWRpcmVjdGJ1Y2tldHRlc3QifSx7ImtleSI6ImRpcmVjdF91cGxvYWRzLzNlOGZkMGJhLTcwZTEtNDRiNy05NGNlLTUyYzZmNzZhNzM4YiJ9LHsic3VjY2Vzc19hY3Rpb25fc3RhdHVzIjoiMjAxIn0seyJ4LWFtei1jcmVkZW50aWFsIjoiYWNjZXNzS2V5MS8yMDE5MDIxMi91cy1lYXN0LTEvczMvYXdzNF9yZXF1ZXN0In0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In0seyJ4LWFtei1kYXRlIjoiMjAxOTAyMTJUMjMxNTU4WiJ9XX0=",
-                    "x-amz-credential": "accessKey1/20190212/us-east-1/s3/aws4_request",
+                    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOS0wMy0yOFQxNDo1OTozOVoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJldGFwaWRpcmVjdGJ1Y2tldHRlc3QifSx7ImtleSI6ImRpcmVjdF91cGxvYWRzLzEwNjA2NzY5LWQ2ZWItNDcwMy05MTQ5LTdjNDkyMjIwNzMxYSJ9LHsic3VjY2Vzc19hY3Rpb25fc3RhdHVzIjoiMjAxIn0seyJ4LWFtei1jcmVkZW50aWFsIjoiYWNjZXNzS2V5MS8yMDE5MDMyOC91cy1lYXN0LTEvczMvYXdzNF9yZXF1ZXN0In0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In0seyJ4LWFtei1kYXRlIjoiMjAxOTAzMjhUMTM1OTM5WiJ9XX0=",
+                    "x-amz-credential": "accessKey1/20190328/us-east-1/s3/aws4_request",
                     "x-amz-algorithm": "AWS4-HMAC-SHA256",
-                    "x-amz-date": "20190212T231558Z",
-                    "x-amz-signature": "c93e89cde998f63dd3cf4af97fad6ff3f657415cb0ec3273afe3757284aa04c4"
+                    "x-amz-date": "20190328T135939Z",
+                    "x-amz-signature": "5572f003323fbccefe0b2a9fb0601da2b6b179171f8c747e3ee14082c619ea91"
                   },
                   "url": "http://localhost:9000/etapidirectbuckettest"
                 }
@@ -686,7 +705,7 @@
               "properties": {
                 "uuid": {
                   "type": "string",
-                  "example": "a594c55f-071e-4f1b-83d5-c62747610dca",
+                  "example": "ec12440a-3439-4ec9-b1fa-2d85f89c242a",
                   "description": "A unique ID produced by the client to refer to this command"
                 },
                 "data": {
@@ -738,7 +757,7 @@
               "ETag": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "W/\"ec0cff3b6505c1b6e9333b4dee20e497\""
+                "x-example-value": "W/\"5d084ac4b42d969f337defe6b9e00506\""
               },
               "Cache-Control": {
                 "description": "",
@@ -748,12 +767,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "382cf8e9-d97f-4079-97d2-e2f989eae642"
+                "x-example-value": "6ad2f15a-5a6c-4821-981d-293c8ee4442e"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.042139"
+                "x-example-value": "0.044661"
               },
               "Content-Length": {
                 "description": "",
@@ -764,7 +783,7 @@
             "examples": {
               "application/json": {
                 "status": "accepted",
-                "uuid": "a594c55f-071e-4f1b-83d5-c62747610dca"
+                "uuid": "ec12440a-3439-4ec9-b1fa-2d85f89c242a"
               }
             }
           }
@@ -825,12 +844,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "7685c3f7-bfe5-43d2-b286-00c9b70e3dcd"
+                "x-example-value": "e1773741-778a-4dcd-a932-3a59ba832260"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.450738"
+                "x-example-value": "0.467326"
               },
               "Content-Length": {
                 "description": "",
@@ -876,12 +895,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "76194030-c32e-4bd9-bdc9-6c8edff4c3de"
+                "x-example-value": "7ee185a1-3c2f-479c-a338-ca17a4f85af7"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.026173"
+                "x-example-value": "0.023548"
               },
               "Content-Length": {
                 "description": "",
@@ -917,12 +936,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "2ee8cbef-c12c-43c3-abd4-ef550d2b13e3"
+                "x-example-value": "04a39f39-bbee-425c-9896-0a31b7491395"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.025405"
+                "x-example-value": "0.024544"
               },
               "Content-Length": {
                 "description": "",
@@ -963,12 +982,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "b7d84154-8f32-4f7f-af57-0fc8c5772084"
+                "x-example-value": "05298e0d-095a-49e4-b825-13576a3b6e87"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.022929"
+                "x-example-value": "0.029221"
               },
               "Content-Length": {
                 "description": "",
@@ -1019,14 +1038,14 @@
               "properties": {
                 "uuid": {
                   "type": "string",
-                  "example": "fcae19fc-4f98-4893-87b8-3a73e44cc334",
+                  "example": "b15b0615-0ec8-491f-936f-79b28c6c6769",
                   "description": "A unique ID produced by the client to refer to this command"
                 },
                 "data": {
                   "type": "array",
                   "example": [
                     {
-                      "uuid": "97a56305-6221-488c-9ae1-5099949c0360",
+                      "uuid": "513e7fe8-a7cf-42c2-a051-ebec1aca8e35",
                       "command": "BuildResponse",
                       "data": {
                         "additional_information_key": null,
@@ -1062,7 +1081,7 @@
                       }
                     },
                     {
-                      "uuid": "3b75d9e0-00f9-4ed4-9979-42b114849af6",
+                      "uuid": "f9453014-5032-499a-b489-ec81b1b0f849",
                       "command": "BuildRespondent",
                       "data": {
                         "name": "dodgy_co",
@@ -1098,7 +1117,7 @@
                       }
                     },
                     {
-                      "uuid": "3ba9a30c-9d0b-4434-b87b-15fa44552435",
+                      "uuid": "0af496ff-e2de-4056-88da-6cb727868bd8",
                       "command": "BuildRepresentative",
                       "data": {
                         "address_attributes": {
@@ -1161,12 +1180,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "c1efa7de-161f-4d9b-924f-b75e9994563e"
+                "x-example-value": "9b322791-0741-42c4-b28b-2ac76542b8f8"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.141176"
+                "x-example-value": "0.104303"
               },
               "Content-Length": {
                 "description": "",
@@ -1179,18 +1198,18 @@
                 "status": "accepted",
                 "meta": {
                   "BuildResponse": {
-                    "submitted_at": "2019-02-12T23:15:59.657Z",
-                    "reference": "142000014000",
+                    "submitted_at": "2019-03-28T13:59:39.859Z",
+                    "reference": "142000139300",
                     "office_address": "Bristol Civil and Family Justice Centre, 2 Redcliff Street, Bristol, BS1 6GR",
                     "office_phone_number": "0117 929 8261",
-                    "pdf_url": "http://localhost:9000/etapibuckettest/vZiVZXdy7hGrFkcx45gqatJn?response-content-disposition=attachment%3B%20filename%3D%22et3_atos_export.pdf%22%3B%20filename%2A%3DUTF-8%27%27et3_atos_export.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=accessKey1%2F20190212%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190212T231559Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=135fbf37ca0c4ee4529ccf2148ea5bfcfef2c50b2e94030f69d1f6617947a77f"
+                    "pdf_url": "http://localhost:9000/etapibuckettest/pJGTknKbjvH5RXLu3uUpZnwK?response-content-disposition=attachment%3B%20filename%3D%22et3_atos_export.pdf%22%3B%20filename%2A%3DUTF-8%27%27et3_atos_export.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=accessKey1%2F20190328%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190328T135939Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bc63f7a890f2472927d75d56737959d181709e921fcbf6b96df87c3bf8e579c5"
                   },
                   "BuildRespondent": {
                   },
                   "BuildRepresentative": {
                   }
                 },
-                "uuid": "fcae19fc-4f98-4893-87b8-3a73e44cc334"
+                "uuid": "b15b0615-0ec8-491f-936f-79b28c6c6769"
               }
             }
           },
@@ -1216,12 +1235,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "a695fd54-6224-4207-add6-b6d7091f4525"
+                "x-example-value": "cddef9b1-194b-44a8-929f-593577cc77e4"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.022814"
+                "x-example-value": "0.019326"
               },
               "Content-Length": {
                 "description": "",
@@ -1232,7 +1251,7 @@
             "examples": {
               "application/json": {
                 "status": "not_accepted",
-                "uuid": "d76773f2-c4d3-42c9-ab44-2dddefe672ef",
+                "uuid": "0cb29b8f-4566-4471-88af-4ab7d8c4e705",
                 "errors": [
                   {
                     "status": 422,
@@ -1241,7 +1260,174 @@
                     "detail": "Invalid case number",
                     "source": "/data/0/case_number",
                     "command": "BuildResponse",
-                    "uuid": "324c254a-3155-4dc7-8b37-d2b74b73e285"
+                    "uuid": "42d5d0e1-2d2b-4313-8976-5cd1f9eb77c1"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      }
+    },
+    "/api/v2/validate": {
+      "post": {
+        "tags": [
+          "Validate Claimants File"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "required": false,
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string",
+                  "example": "de290aea-f37d-4e1e-b7ca-440da73ff7ed",
+                  "description": "A unique ID produced by the client to refer to this command"
+                },
+                "data": {
+                  "type": "object",
+                  "example": {
+                    "data_url": null,
+                    "data_from_key": "g7cg5sRxVVNZvHYqQt2ZHo7q",
+                    "filename": "simple_user_with_csv_group_claims.csv",
+                    "checksum": "7ac66d9f4af3b498e4cf7b9430974618"
+                  },
+                  "description": "The validation command to perform"
+                },
+                "command": {
+                  "type": "string",
+                  "example": "ValidateClaimantsFile",
+                  "description": " command",
+                  "enum": [
+                    "ValidateClaimantsFile"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Claimants file successfully validated",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "ETag": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "W/\"a6da791a5c53a2e659f5fbe54756220a\""
+              },
+              "Cache-Control": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "max-age=0, private, must-revalidate"
+              },
+              "X-Request-Id": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "f5f6722f-bb2a-4bf7-ab64-37247e049976"
+              },
+              "X-Runtime": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "0.044769"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "67"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "status": "accepted",
+                "uuid": "de290aea-f37d-4e1e-b7ca-440da73ff7ed"
+              }
+            }
+          },
+          "400": {
+            "description": "Claimants file invalid - due to invalid rows",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Cache-Control": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "no-cache"
+              },
+              "X-Request-Id": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "705a0a79-a4e1-4b14-b3e4-806743402073"
+              },
+              "X-Runtime": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "0.020695"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "504"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "status": "not_accepted",
+                "uuid": "5cfcb2fd-72cb-41e6-81d6-cb160dcc7611",
+                "errors": [
+                  {
+                    "status": 422,
+                    "code": "invalid",
+                    "title": "is invalid",
+                    "detail": "is invalid",
+                    "source": "/data_from_key/0/date_of_birth",
+                    "command": "ValidateClaimantsFile",
+                    "uuid": "5cfcb2fd-72cb-41e6-81d6-cb160dcc7611"
+                  },
+                  {
+                    "status": 422,
+                    "code": "inclusion",
+                    "title": "is not included in the list",
+                    "detail": "is not included in the list",
+                    "source": "/data_from_key/1/title",
+                    "command": "ValidateClaimantsFile",
+                    "uuid": "5cfcb2fd-72cb-41e6-81d6-cb160dcc7611"
                   }
                 ]
               }
@@ -1287,6 +1473,10 @@
     {
       "name": "Response",
       "description": "A response is the response from the employer who the claim is made against.  It comes from the ET3 form"
+    },
+    {
+      "name": "Validate Claimants File",
+      "description": "A service perform validation using various commands"
     }
   ]
 }

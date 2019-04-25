@@ -22,6 +22,20 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
+--
+-- Name: pgcrypto; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
+
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -546,7 +560,8 @@ CREATE TABLE public.claims (
     employment_details jsonb DEFAULT '{}'::jsonb NOT NULL,
     is_unfair_dismissal boolean,
     primary_respondent_id bigint,
-    primary_representative_id bigint
+    primary_representative_id bigint,
+    pdf_template_reference character varying NOT NULL
 );
 
 
@@ -567,6 +582,24 @@ CREATE SEQUENCE public.claims_id_seq
 --
 
 ALTER SEQUENCE public.claims_id_seq OWNED BY public.claims.id;
+
+
+--
+-- Name: commands; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.commands (
+    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    request_body text NOT NULL,
+    request_headers jsonb NOT NULL,
+    response_body text NOT NULL,
+    response_headers jsonb,
+    response_status integer,
+    root_object_type character varying,
+    root_object_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
 
 
 --
@@ -1121,7 +1154,9 @@ CREATE TABLE public.uploaded_files (
     filename character varying,
     checksum character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    import_file_url character varying,
+    import_from_key character varying
 );
 
 
@@ -1483,6 +1518,14 @@ ALTER TABLE ONLY public.claims
 
 
 --
+-- Name: commands commands_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.commands
+    ADD CONSTRAINT commands_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: diversity_responses diversity_responses_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1790,6 +1833,20 @@ CREATE INDEX index_claims_on_primary_representative_id ON public.claims USING bt
 --
 
 CREATE INDEX index_claims_on_primary_respondent_id ON public.claims USING btree (primary_respondent_id);
+
+
+--
+-- Name: index_commands_on_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_commands_on_id ON public.commands USING btree (id);
+
+
+--
+-- Name: index_commands_on_root_object_type_and_root_object_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_commands_on_root_object_type_and_root_object_id ON public.commands USING btree (root_object_type, root_object_id);
 
 
 --
@@ -2115,6 +2172,12 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190108161050'),
 ('20190108161126'),
 ('20190108161211'),
-('20190116150702');
+('20190116150702'),
+('20190225185919'),
+('20190225190111'),
+('20190225190207'),
+('20190312113307'),
+('20190401204615'),
+('20190401204745');
 
 

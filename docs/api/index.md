@@ -26,7 +26,9 @@ Signed Blob resource - azure mode
 
 A claim is the claim made by the claimant against the respondent (employer)
 
-* [Create a claim with a claimant, respondent and representative](claim/create_a_claim_with_a_claimant,_respondent_and_representative.md)
+* [Create a claim with a claimant, respondent and representative with external pdf](claim/create_a_claim_with_a_claimant,_respondent_and_representative_with_external_pdf.md)
+* [Create a claim with a claimant, respondent and representative without external pdf](claim/create_a_claim_with_a_claimant,_respondent_and_representative_without_external_pdf.md)
+* [Create a claim with a claimant, respondent, representative and claim information file](claim/create_a_claim_with_a_claimant,_respondent,_representative_and_claim_information_file.md)
 
 ## Claim Reference
 
@@ -52,4 +54,14 @@ A response is the response from the employer who the claim is made against.  It 
 Signed S3 resource
 
 * [Create a signed s3 object suitable for use in a HTML form for use with direct upload](signed_s3_resource/create_a_signed_s3_object_suitable_for_use_in_a_html_form_for_use_with_direct_upload.md)
+
+## Validate Claimants File
+
+A service perform validation using various commands
+
+* [Claimants file invalid - due to a missing column](validate_claimants_file/claimants_file_invalid_-_due_to_a_missing_column.md)
+* [Claimants file invalid - due to a missing file](validate_claimants_file/claimants_file_invalid_-_due_to_a_missing_file.md)
+* [Claimants file invalid - due to an empty file](validate_claimants_file/claimants_file_invalid_-_due_to_an_empty_file.md)
+* [Claimants file invalid - due to invalid rows](validate_claimants_file/claimants_file_invalid_-_due_to_invalid_rows.md)
+* [Claimants file successfully validated](validate_claimants_file/claimants_file_successfully_validated.md)
 

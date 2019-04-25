@@ -17,10 +17,13 @@ class BuildClaimCommand < BaseCommand
   attribute :miscellaneous_information, :string
   attribute :employment_details
   attribute :is_unfair_dismissal, :boolean
+  attribute :pdf_template_reference, :string, default: 'et1-v1-en'
 
-  def initialize(*)
-    super
-    self.reference_service = ReferenceService
+  validates :pdf_template_reference, inclusion: { in: ['et1-v1-en', 'et1-v1-cy'] }
+
+  def initialize(*args, reference_service: ReferenceService, **kw_args)
+    super(*args, **kw_args)
+    self.reference_service = reference_service
   end
 
   def apply(root_object, meta: {})

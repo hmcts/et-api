@@ -5,7 +5,9 @@ RSpec.describe BuildClaimCommand do
 
   let(:uuid) { SecureRandom.uuid }
   let(:data) { build(:json_claim_data, :full, reference: 'myreference').as_json }
-  let(:root_object) { Claim.new }
+  let(:root_object) { build(:claim) }
+
+  include_context 'with disabled event handlers'
 
   describe '#apply' do
     it 'applies the data to the root object' do
@@ -27,6 +29,25 @@ RSpec.describe BuildClaimCommand do
 
       # Assert
       expect(meta).to include reference: data[:reference]
+    end
+  end
+
+  describe '#valid?' do
+    context 'with invalid pdf_template_reference' do
+      let(:data) do
+        {
+          pdf_template_reference: '../../../etc/password'
+        }
+      end
+
+      it 'contains the correct error key in the pdf_template_reference attributes' do
+        # Act
+        command.valid?
+
+        # Assert
+        expect(command.errors.details[:pdf_template_reference]).to include(error: :inclusion, value: data[:pdf_template_reference])
+      end
+
     end
   end
 end

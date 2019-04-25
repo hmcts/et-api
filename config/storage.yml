@@ -1,10 +1,14 @@
 test:
   service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
+  root: <%= Rails.root.join("tmp/test_storage") %>
 
 local:
   service: Disk
-  root: <%= Rails.root.join("storage") %>
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local_direct_upload:
+  service: Disk
+  root: <%= Rails.root.join("tmp/direct_upload_storage") %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
@@ -13,6 +17,14 @@ amazon:
   secret_access_key: <%= ENV.fetch('AWS_SECRET_ACCESS_KEY', '') %>
   region: <%= ENV.fetch('AWS_REGION', 'eu-west-1') %>
   bucket: <%= ENV.fetch('S3_UPLOAD_BUCKET', '') %>
+  <%= "endpoint: #{ENV.fetch('AWS_ENDPOINT')}" if ENV.key?('AWS_ENDPOINT') %>
+  <%= "force_path_style: true" if ENV.fetch('AWS_S3_FORCE_PATH_STYLE', 'false') == 'true' %>
+amazon_direct_upload:
+  service: S3
+  access_key_id: <%= ENV.fetch('AWS_ACCESS_KEY_ID', '') %>
+  secret_access_key: <%= ENV.fetch('AWS_SECRET_ACCESS_KEY', '') %>
+  region: <%= ENV.fetch('AWS_REGION', 'eu-west-1') %>
+  bucket: <%= ENV.fetch('S3_DIRECT_UPLOAD_BUCKET', '') %>
   <%= "endpoint: #{ENV.fetch('AWS_ENDPOINT')}" if ENV.key?('AWS_ENDPOINT') %>
   <%= "force_path_style: true" if ENV.fetch('AWS_S3_FORCE_PATH_STYLE', 'false') == 'true' %>
 azure:
